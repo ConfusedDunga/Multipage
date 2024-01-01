@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-
+from st_pages import Page, Section, show_pages, add_page_title
+add_page_title()
 # Assuming df is your DataFrame containing the interest rates data
 # Make sure your DataFrame is loaded with the data before using this code
 def load_data(file_path, sheet_name):
