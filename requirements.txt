@@ -1,1 +1,6 @@
-streamlit==1.11.0
+streamlit
+plotly
+matlplotlib
+pyBSDate
+st_pages
+pandas
