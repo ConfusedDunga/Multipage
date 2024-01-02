@@ -57,12 +57,20 @@ def main():
 
     # Line Chart
     fig = px.line(filtered_df, x='Fiscal Year', y='Base Rate', title=f'Base Rate from {start_date.strftime("%B %Y")} to {end_date.strftime("%B %Y")}', markers=True)
-    fig.update_yaxes(tickformat=".0%")  # Display percentages without decimals
+
+    # Format y-axis labels with percentage and 2 decimal places
+    fig.update_yaxes(tickformat=".2%")
+
+    # Customize hover text with the desired format including month and year
+    fig.update_traces(hovertemplate='%{x|%b-%Y}: %{y:.2%}')
+
+    # Display the chart with full container width
     st.plotly_chart(fig, use_container_width=True)
 
     # Display formatted filtered data table
     st.write("Formatted Filtered Data Table:")
     st.dataframe(filtered_df.style.format({'Fiscal Year': '{:%b-%Y}', 'Base Rate': '{:.2%}'}), use_container_width=True)
+
 
 if __name__ == "__main__":
     main()
