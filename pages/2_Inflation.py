@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 from st_pages import Page, Section, show_pages, add_page_title, add_indentation
 add_indentation()
-add_page_title()
 # Title and Subtitle
 st.title("Inflation Rate of Nepal")
 st.markdown("<h3 style='color: #7c7c7c;'>Choose multiple years for line chart in sidebar</h3>", unsafe_allow_html=True)
