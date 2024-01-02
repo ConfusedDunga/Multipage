@@ -8,7 +8,7 @@ add_page_title()
 st.title("Inflation Rate of Nepal")
 st.markdown("<h3 style='color: #7c7c7c;'>Choose multiple years for line chart in sidebar</h3>", unsafe_allow_html=True)
 # Specify the path to the Excel file
-excel_file_path = 'NRB_data.xlsx'
+excel_file_path = 'NRB_Data.xlsx'
 
 # Read the Excel file into a Pandas DataFrame
 excel_data = pd.ExcelFile(excel_file_path)
