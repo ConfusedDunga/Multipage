@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from st_pages import Page, Section, show_pages, add_page_title
-add_page_title()
+from st_pages import Page, Section, show_pages, add_page_title, add_indentation
+add_indentation()
 
 def load_data(file_path, sheet_name):
     return pd.read_excel(file_path, sheet_name=sheet_name)
@@ -36,17 +36,17 @@ def main():
 
     # Get the latest month name
     latest_month = df['Fiscal Year'].dt.month_name().iloc[-1]
-   
+
     # Title and Subtitle
     st.title("Base Rate of Commercial Banks")
-    st.markdown("<h3 style='color: #7c7c7c;'>Choose the starting and time period from the sidebar</h3>", unsafe_allow_html=True)
 
     # Display metrics
     display_metrics(latest_inflation, previous_month_inflation, previous_year_same_month_inflation, latest_month)
 
-    # Sidebar for selecting date range
-    start_date = st.sidebar.date_input("Select start date", df['Fiscal Year'].min())
-    end_date = st.sidebar.date_input("Select end date", df['Fiscal Year'].max())
+    # Arrange the date filter in two columns
+    date_col1, date_col2 = st.columns(2)
+    start_date = date_col1.date_input("Select start date", df['Fiscal Year'].min())
+    end_date = date_col2.date_input("Select end date", df['Fiscal Year'].max())
 
     # Convert start and end dates to pandas datetime objects
     start_date = pd.to_datetime(start_date)
@@ -55,7 +55,7 @@ def main():
     # Filter data based on the selected date range
     filtered_df = df[(df['Fiscal Year'] >= start_date) & (df['Fiscal Year'] <= end_date)]
 
-    #Line Chart
+    # Line Chart
     fig = px.line(filtered_df, x='Fiscal Year', y='Base Rate', title=f'Base Rate from {start_date.strftime("%B %Y")} to {end_date.strftime("%B %Y")}', markers=True)
     fig.update_yaxes(tickformat=".0%")  # Display percentages without decimals
     st.plotly_chart(fig, use_container_width=True)
