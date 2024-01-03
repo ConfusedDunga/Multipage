@@ -4,6 +4,8 @@ import plotly.express as px
 from pyBSDate import convert_BS_to_AD
 from st_pages import Page, Section, show_pages, add_page_title, add_indentation
 add_indentation()
+st.set_page_config(layout = 'wide')
+
 # Assuming df is your DataFrame containing the interest rates data
 # Make sure your DataFrame is loaded with the data before using this code
 def load_data(file_path, sheet_name):

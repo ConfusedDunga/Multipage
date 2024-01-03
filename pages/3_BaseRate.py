@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 from st_pages import Page, Section, show_pages, add_page_title, add_indentation
 add_indentation()
+st.set_page_config(layout = 'wide')
 
 def load_data(file_path, sheet_name):
     return pd.read_excel(file_path, sheet_name=sheet_name)
