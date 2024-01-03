@@ -4,7 +4,10 @@ from st_pages import Page, Section, show_pages, add_page_title
 # Either this or add_indentation() MUST be called on each page in your
 # app to add indentation in the sidebar
 add_page_title()
-st.set_page_config(layout = 'wide')
+st.set_page_config(
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 # Specify what pages should be shown in the sidebar, and what their titles should be
 show_pages(
     [

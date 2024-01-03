@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 from st_pages import Page, Section, show_pages, add_page_title, add_indentation
 add_indentation()
-st.set_page_config(layout = 'wide')
 
 # Title and Subtitle
 st.title("Inflation Rate of Nepal")
