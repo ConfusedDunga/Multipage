@@ -36,7 +36,7 @@ latest_month = df['Date'].max().strftime('%B %Y')  # Format: Month Year
 # Display the gauge chart with the latest inflation rate and change from the previous month
 col1, col2, col3 = st.columns(3)
 # Display the three metrics: Latest Inflation Rate, Change from Previous Month, Change from Previous Year
-col1.metric(f"{latest_month} Base Rate", f"{latest_inflation:.2f}%", help=f"Latest available {latest_month}'s base rate")
+col1.metric(f"{latest_month} Rate", f"{latest_inflation:.2f}%", help=f"Latest available {latest_month}'s base rate")
 col2.metric("Change from Previous Month", f"{latest_inflation - previous_month_inflation:.2f}%", help="Change from the previous month")
 col3.metric("Change from Previous Year (Same Month)", f"{latest_inflation - previous_year_same_month_inflation:.2f}%", help="Change from the previous year, same month")
 
