@@ -18,7 +18,7 @@ This Streamlit-based dashboard provides insights into the financial access metri
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/financial-access-dashboard.git
+   git clone [https://github.com/yourusername/financial-access-dashboard.git](https://github.com/ConfusedDunga/Multipage/)
 Change directory:
 
 bash
