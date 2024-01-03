@@ -13,7 +13,6 @@ excel_file_path = 'NRB_Data.xlsx'
 excel_data = pd.ExcelFile(excel_file_path)
 # Read the 'Inflation' sheet into a DataFrame
 df = pd.read_excel(excel_data, sheet_name='Inflation')
-print(df)
 # Get the current year
 current_year = pd.to_datetime('now').year
 
