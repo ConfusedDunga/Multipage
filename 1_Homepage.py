@@ -1,5 +1,4 @@
 import streamlit as st
-st.set_page_config(layout="wide")
 from st_pages import Page, Section, show_pages, add_page_title
 
 # Either this or add_indentation() MUST be called on each page in your

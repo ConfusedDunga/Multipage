@@ -35,11 +35,11 @@ st.subheader(f'As of {latest_date.strftime("%B %Y")}')
 
 # Specify the metrics you want to include in the dashboard
 selected_metrics = [
-    'NOF Institutions', 'NOF Branches', 'NOF Deposit Accounts',
-    'NOF Loan Accounts', 'NOF Branchless Banking Centers',
-    'NOF Branchless Banking Customers', 'NOF Mobile Banking Customers',
-    'NOF Internet Banking Customers', 'NOF ATMs', 'NOF Debit Cards',
-    'NOF Credit Cards', 'NOF Prepaid Cards'
+    'Total Institutions', 'Total Branches', 'Total Deposit Accounts',
+    'Total Loan Accounts', 'Total BLB Centers',
+    'Total BLB Customers', 'Total Mobile Banking Customers',
+    'Total Internet Banking Customers', 'Total no of Operating ATMs', 'Total Debit Cards',
+    'Total Credit Cards', 'Total Prepaid Cards'
 ]
 
 # Filter the DataFrame to include only selected metrics
@@ -58,7 +58,7 @@ for i, metric in enumerate(selected_df.columns):
 
     # Create a metric section
     with columns[col]:
-        st.subheader(metric)
+        st.write(metric)
 
         # Display the latest metric value
         latest_metric_value = selected_df[metric].iloc[-1]
@@ -66,7 +66,7 @@ for i, metric in enumerate(selected_df.columns):
         st.metric(label='Latest Number', value=latest_metric_value, delta=delta_value)
 
         # Create a Plotly line chart below the metric
-        fig = px.line(selected_df, x=selected_df.index, y=metric, title=f'Trend of {metric}',line_shape='spline')
+        fig = px.line(selected_df, x=selected_df.index, y=metric, title=f'Trend of {metric}',line_shape='spline',markers=True)
 
         # Hide grids for both x and y axes
         fig.update_xaxes(showgrid=False)
