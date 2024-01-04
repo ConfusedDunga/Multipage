@@ -4,7 +4,7 @@ add_page_title()
 
 
 c1, c2, c3 = st.columns(3)
-c4, c5, c6 = st.columns([6,3,2]) #just to highlight these are different cols
+c4, c5, c6 = st.columns([6,3,2])
 
 with st.container():
     c1.write("c1")
