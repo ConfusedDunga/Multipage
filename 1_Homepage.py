@@ -2,9 +2,6 @@ import streamlit as st
 st.set_page_config(layout="wide")
 from st_pages import Page, Section, show_pages, add_page_title
 
-# Either this or add_indentation() MUST be called on each page in your
-# app to add indentation in the sidebar
-
 # Specify what pages should be shown in the sidebar, and what their titles should be
 show_pages(
     [
