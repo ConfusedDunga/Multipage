@@ -10,7 +10,7 @@ st.markdown(
         .st-emotion-cache-1r6slb0 {
             width: calc(33.3333% - 1rem);
             flex: 1 1 calc(33.3333% - 1rem);
-            padding: 3%;
+            padding: 2%;
         }   
     </style>
     """,
